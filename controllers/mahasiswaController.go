@@ -12,9 +12,13 @@ import (
 	"github.com/restapiGo/utils"
 )
 
+const (
+	key = "d!am$y@h-m-d1d4-k3cE-p4R@h!!!"
+)
+
 // GetMahasiswa
 func GetMahasiswa(w http.ResponseWriter, r *http.Request) {
-	if r.Header.Get("Authorization") == "d!am$y@h-m-d1d4-k3cE-p4R@h!!!" {
+	if r.Header.Get("Authorization") == key {
 		if r.Method == "GET" {
 			ctx, cancel := context.WithCancel(context.Background())
 
@@ -41,7 +45,7 @@ func GetMahasiswa(w http.ResponseWriter, r *http.Request) {
 
 // PostMahasiswa
 func PostMahasiswa(w http.ResponseWriter, r *http.Request) {
-	if r.Header.Get("Authorization") == "d!am$y@h-m-d1d4-k3cE-p4R@h!!!" {
+	if r.Header.Get("Authorization") == key {
 		if r.Method == "POST" {
 
 			if r.Header.Get("Content-Type") != "application/json" {
@@ -83,7 +87,7 @@ func PostMahasiswa(w http.ResponseWriter, r *http.Request) {
 
 // UpdateMahasiswa
 func UpdateMahasiswa(w http.ResponseWriter, r *http.Request) {
-	if r.Header.Get("Authorization") == "d!am$y@h-m-d1d4-k3cE-p4R@h!!!" {
+	if r.Header.Get("Authorization") == key {
 		if r.Method == "PUT" {
 
 			if r.Header.Get("Content-Type") != "application/json" {
@@ -127,7 +131,7 @@ func UpdateMahasiswa(w http.ResponseWriter, r *http.Request) {
 
 // DeleteMahasisw
 func DeleteMahasiswa(w http.ResponseWriter, r *http.Request) {
-	if r.Header.Get("Authorization") == "d!am$y@h-m-d1d4-k3cE-p4R@h!!!" {
+	if r.Header.Get("Authorization") == key {
 		if r.Method == "DELETE" {
 
 			ctx, cancel := context.WithCancel(context.Background())
